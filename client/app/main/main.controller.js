@@ -3,6 +3,7 @@
 angular.module('basej4booksApp')
   .controller('MainCtrl', function ($scope, $http, socket, Auth) {
     $scope.getCurrentUser = Auth.getCurrentUser;
+    $scope.isLoggedIn = Auth.isLoggedIn;
 
     $scope.books = [];
     $scope.newBook = '';
@@ -13,6 +14,11 @@ angular.module('basej4booksApp')
     });
 
     $scope.addBook = function() {
+      if (!Auth.isLoggedIn()){
+        alert("Must log in to post.");
+        return;
+      }
+
       var book = $scope.newBook.trim();
       if(book === '') {
         return;

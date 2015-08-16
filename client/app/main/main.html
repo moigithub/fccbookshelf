@@ -8,7 +8,7 @@
   </div>
 </header>
 
-<form class="book-form">
+<form class="book-form" ng-show="isLoggedIn()">
     <label>Add your book</label>
     <p class="input-group">
       <input type="text" class="form-control" placeholder="Title or ISBN" ng-model="newBook">
