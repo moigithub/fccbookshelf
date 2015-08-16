@@ -22,11 +22,11 @@
     <div class="col-lg-12">
       <h1 class="page-header">Books:</h1>
       <ul class="nav nav-tabs">
-        <li class="nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="book in books">{{book}} 
+        <li class="nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="book in books">
           <a href="#" tooltip="{{book.isbn}}">{{book.name}}
             <img ng-src="{{book.image}}" alt="{{book.name}}"/>
-            <button type="button" class="btn btn-danger" ng-click="deleteBook(book)">&times;</button>
           </a>
+          <button type="button" class="btn btn-danger" ng-click="deleteBook(book)">&times;</button>
         </li>
       </ul>
     </div>

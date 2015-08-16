@@ -8,7 +8,7 @@ var BookSchema = new Schema({
 	image: String,
 	isbn: String,
   	name: String,
-  	tradeable: Boolean,
+  	tradeable: Boolean
 /*  	tradeInfo: { 
   		ReqUserID: { type:Schema.ObjectId, ref:"User"},
 	  	tradeWithBookID: { type:Schema.ObjectId, ref:"Book"},
