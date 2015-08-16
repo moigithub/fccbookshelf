@@ -4,9 +4,17 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var BookSchema = new Schema({
-  name: String,
-  info: String,
-  active: Boolean
+	owner: { type:Schema.ObjectId, ref:"User"},
+	image: String,
+	isbn: String,
+  	name: String,
+  	tradeable: Boolean,
+/*  	tradeInfo: { 
+  		ReqUserID: { type:Schema.ObjectId, ref:"User"},
+	  	tradeWithBookID: { type:Schema.ObjectId, ref:"Book"},
+	  	tradeStatus: Number 
+	  }
+*/
 });
 
 module.exports = mongoose.model('Book', BookSchema);
