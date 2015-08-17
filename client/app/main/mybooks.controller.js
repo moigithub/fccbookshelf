@@ -42,6 +42,8 @@ angular.module('basej4booksApp')
       $http.jsonp( booksAPIURI  ).success(function(books) {
     //    console.log(books);
         var bookInfo = books.items[0].volumeInfo;
+  console.log(bookInfo);
+
         var bookData = { 
           owner: Auth.getCurrentUser()["_id"],
           image : bookInfo.imageLinks.thumbnail,
