@@ -3,6 +3,14 @@
 var _ = require('lodash');
 var Book = require('./book.model');
 
+// Get list of books of specific user
+exports.userBooks = function(req, res) {
+  Book.find({owner:req.params.id}, function (err, books) {
+    if(err) { return handleError(res, err); }
+    return res.status(200).json(books);
+  });
+};
+
 // Get list of books
 exports.index = function(req, res) {
   Book.find(function (err, books) {

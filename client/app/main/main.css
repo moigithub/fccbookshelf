@@ -32,3 +32,21 @@
 .navbar-text {
     margin-left: 15px;
 }
+
+.cover {
+    float:left;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 3px;
+    margin:3px;
+    width: 130px;
+    height: 240px;
+    position:relative;
+}
+
+.cover button {
+    position:absolute;
+    top:-5px;
+    right:0;
+    opacity: .6;
+}

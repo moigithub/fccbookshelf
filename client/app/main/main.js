@@ -6,5 +6,10 @@ angular.module('basej4booksApp')
       .when('/', {
         templateUrl: 'app/main/main.html',
         controller: 'MainCtrl'
+      })
+      .when('/mybooks', {
+        templateUrl: 'app/main/mybooks.html',
+        controller: 'MyBooksCtrl',
+        authenticate:true
       });
   });
