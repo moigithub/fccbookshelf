@@ -80,6 +80,26 @@ exports.changePassword = function(req, res, next) {
 };
 
 /**
+ * save a users data
+ */
+exports.saveData = function(req, res, next) {
+  var userId = req.user._id;
+  var newfullname = req.body.fullname || "";
+  var newcity = req.body.city || "";
+  var newstate = req.body.state || "";
+
+  User.findById(userId, function (err, user) {
+    user.fullname = newfullname;
+    user.city = newcity;
+    user.state = newstate;
+    user.save(function(err) {
+      if (err) return validationError(res, err);
+      res.status(200).send('OK');
+    });
+  });
+};
+
+/**
  * Get my info
  */
 exports.me = function(req, res, next) {
@@ -99,3 +119,4 @@ exports.me = function(req, res, next) {
 exports.authCallback = function(req, res, next) {
   res.redirect('/');
 };
+

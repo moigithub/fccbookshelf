@@ -17,6 +17,9 @@ angular.module('basej4booksApp')
         params: {
           id:'me'
         }
+      },
+      update: {
+        method: 'PUT'
       }
 	  });
   });

@@ -92,6 +92,16 @@ angular.module('basej4booksApp')
         }).$promise;
       },
 
+      saveUserData: function(newUserData, callback) {
+        var cb = callback || angular.noop;
+
+        return User.update({ id: currentUser._id }, newUserData , function(user) {
+          return cb(user);
+        }, function(err) {
+          return cb(err);
+        }).$promise;
+      },
+
       /**
        * Gets all available info on authenticated user
        *

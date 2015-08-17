@@ -2,6 +2,8 @@
 
 angular.module('basej4booksApp')
   .controller('SettingsCtrl', function ($scope, User, Auth) {
+    $scope.user = Auth.getCurrentUser();
+
     $scope.errors = {};
 
     $scope.changePassword = function(form) {
@@ -18,4 +20,18 @@ angular.module('basej4booksApp')
         });
       }
 		};
+
+    $scope.changeUserData = function(form) {
+      $scope.submitted = true;
+      if(form.$valid) {
+        Auth.saveUserData( $scope.user )
+        .then( function() {
+          $scope.message2 = 'User Data successfully changed.';
+        })
+        .catch( function() {
+          $scope.message2 = '';
+        });
+      }
+    };
+
   });
