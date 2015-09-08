@@ -3,7 +3,9 @@
 angular.module('basej4booksApp')
   .controller('SettingsCtrl', function ($scope, User, Auth) {
     $scope.user = Auth.getCurrentUser();
-
+    $scope.user.oldPassword="";
+    $scope.user.newPassword ="";
+    
     $scope.errors = {};
 
     $scope.changePassword = function(form) {
